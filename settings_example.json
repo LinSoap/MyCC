@@ -4,5 +4,29 @@
     "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
     "API_TIMEOUT_MS": "3000000"
   },
-  "model": "opus"
+  "model": "opus",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "mpv --no-video \"$(ls ~/my_audio_files/*.wav | shuf -n 1)\" &> /dev/null & notify-send 'Claude Code' '你的使命还没结束！'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "mpv --no-video \"$(ls ~/my_audio_files/*.wav | shuf -n 1)\" &> /dev/null & notify-send 'Claude Code' '你的使命还没结束！'"
+          }
+        ]
+      }
+    ]
+  }
 }
